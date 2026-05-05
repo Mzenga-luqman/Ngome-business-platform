@@ -1,0 +1,22 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+@source '../../app/**/*.php';
+
+@theme {
+    --font-sans: 'Inter', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --color-brand-900: #0B1F3A;
+    --color-brand-800: #0d2548;
+    --color-brand-700: #103060;
+}
+
+/* Smooth transitions on all Livewire updates */
+[wire\:loading] { opacity: 0.6; pointer-events: none; }
+
+/* Input focus ring */
+select { outline: none; }

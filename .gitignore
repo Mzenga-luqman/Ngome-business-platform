@@ -1,3 +1,4 @@
+
 /vendor/
 node_modules/
 npm-debug.log
@@ -28,3 +29,47 @@ Homestead.json
 .env.production
 .phpactor.json
 auth.json
+
+# Environment files
+.env
+.env.*
+
+# Logs
+*.log
+
+# Laravel storage
+/storage/*.key
+/storage/logs
+/storage/framework/cache
+/storage/framework/sessions
+/storage/framework/views
+
+# Cache
+/bootstrap/cache/*.php
+
+# Dependencies
+/vendor
+/node_modules
+
+# Public build files
+/public/build
+/public/hot
+/public/storage
+
+# IDEs & editors
+.vscode/
+.idea/
+.fleet/
+.zed/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Testing
+.phpunit.result.cache
+.phpunit.cache
+
+# Misc
+auth.json
+
