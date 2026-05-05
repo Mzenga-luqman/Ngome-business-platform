@@ -107,7 +107,12 @@ class Creditors extends Component
 
             $this->successMessage = $result['message'];
         } catch (\Throwable $e) {
-            $this->errorMessage = $e->getMessage();
+            \Illuminate\Support\Facades\Log::error('Failed to mark creditor payment from Livewire component.', [
+                'creditor_id' => $creditorId,
+                'user_id' => auth()->id(),
+                'exception' => $e,
+            ]);
+            $this->errorMessage = 'Unable to mark this credit as paid right now. Please try again.';
         }
     }
 

@@ -33,6 +33,8 @@ auth.json
 # Environment files
 .env
 .env.*
+!.env.example
+!.env.production.example
 
 # Logs
 *.log
@@ -72,4 +74,11 @@ Thumbs.db
 
 # Misc
 auth.json
+
+
+# Local-only project artifacts
+/database.sqlite
+/*.sql
+/test_sale_creation.php
+/getMessage
 

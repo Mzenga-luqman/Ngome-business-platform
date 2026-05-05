@@ -445,7 +445,11 @@ class Pos extends Component
             $this->discountType = 'none';
             $this->manualDiscountAmount = '';
         } catch (\Throwable $e) {
-            $this->errorMessage = $e->getMessage();
+            \Illuminate\Support\Facades\Log::error('POS cash sale failed.', [
+                'user_id' => auth()->id(),
+                'exception' => $e,
+            ]);
+            $this->errorMessage = 'Unable to complete sale right now. Please try again.';
         }
     }
 
@@ -542,7 +546,11 @@ class Pos extends Component
             $this->creditCustomerName = '';
             $this->creditCustomerPhone = '';
         } catch (\Throwable $e) {
-            $this->errorMessage = $e->getMessage();
+            \Illuminate\Support\Facades\Log::error('POS credit sale failed.', [
+                'user_id' => auth()->id(),
+                'exception' => $e,
+            ]);
+            $this->errorMessage = 'Unable to save this credit sale right now. Please try again.';
         }
     }
 

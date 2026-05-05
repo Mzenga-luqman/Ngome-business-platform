@@ -92,7 +92,12 @@ class CreditorController extends Controller
 
             return back()->with('success', 'Credit marked as paid and converted to sale successfully.');
         } catch (\Throwable $e) {
-            return back()->with('error', $e->getMessage());
+            \Illuminate\Support\Facades\Log::error('Failed to mark credit as paid.', [
+                'creditor_id' => $creditor->id,
+                'exception' => $e,
+            ]);
+
+            return back()->with('error', 'Unable to complete this action right now. Please try again.');
         }
     }
 }
